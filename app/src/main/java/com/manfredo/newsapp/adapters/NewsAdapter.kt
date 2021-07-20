@@ -53,8 +53,8 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
         val newDateTime = newFormatDateTime.format(dateTime)
 
         holder.itemView.apply {
-            Glide.with(this).load(BASE_IMG_URL + articleDocs.multimedia.getOrNull(position)?.url).into(ivArticleImage)
-            tvTitle.text = articleDocs.headline.main
+            Glide.with(this).load(BASE_IMG_URL + articleDocs.multimedia?.getOrNull(position)?.url).into(ivArticleImage)
+            tvTitle.text = articleDocs.headline?.main
             tvDescription.text = articleDocs.snippet
             tvPublishedAt.text = newDateTime.toString()
             tvSource.text = articleDocs.source

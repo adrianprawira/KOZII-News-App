@@ -1,5 +1,6 @@
 package com.manfredo.newsapp.models
 
 data class Response(
-    val docs: List<Docs>
+    val docs: MutableList<Docs>,
+    val meta: Meta
 )
