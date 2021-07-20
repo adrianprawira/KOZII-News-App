@@ -8,7 +8,6 @@ import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.manfredo.newsapp.databinding.FragmentArticleBinding
-import com.manfredo.newsapp.models.Docs
 import com.manfredo.newsapp.ui.MainActivity
 import com.manfredo.newsapp.ui.NewsViewModel
 import kotlinx.android.synthetic.main.fragment_article.*
@@ -23,7 +22,7 @@ class ArticleFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentArticleBinding.inflate(layoutInflater, container, false)
         return binding.root
     }

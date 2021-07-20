@@ -7,8 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AbsListView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,7 +15,6 @@ import com.manfredo.newsapp.R
 import com.manfredo.newsapp.adapters.NewsAdapter
 import com.manfredo.newsapp.databinding.FragmentBreakingNewsBinding
 import com.manfredo.newsapp.repository.NewsRepository
-import com.manfredo.newsapp.ui.MainActivity
 import com.manfredo.newsapp.ui.NewsViewModel
 import com.manfredo.newsapp.ui.NewsViewModelProviderFactory
 import com.manfredo.newsapp.util.Constants.Companion.QUERY_PAGE_SIZE
@@ -36,7 +33,7 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentBreakingNewsBinding.inflate(inflater, container, false)
 
         val newsRepository = NewsRepository()
@@ -62,7 +59,7 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
             )
         }
 
-        viewModel.breakingNews.observe(viewLifecycleOwner, Observer { response ->
+        viewModel.breakingNews.observe(viewLifecycleOwner, { response ->
             when (response) {
                 is Resource.Success -> {
                     hideProgressBar()

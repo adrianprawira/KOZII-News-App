@@ -48,7 +48,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
         val articleDocs = differ.currentList[position]
 
         val dateTimeZoneFormatter = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.US)
-        val newFormatDateTime = SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.US)
+        val newFormatDateTime = SimpleDateFormat("EEE, MMM dd, yyyy 'at' HH:mm", Locale.US)
         val dateTime = dateTimeZoneFormatter.parseObject(articleDocs.pub_date)
         val newDateTime = newFormatDateTime.format(dateTime)
 

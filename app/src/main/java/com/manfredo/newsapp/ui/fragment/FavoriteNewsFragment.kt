@@ -18,7 +18,7 @@ class FavoriteNewsFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentFavoriteNewsBinding.inflate(inflater, container, false)
         setUpToolbar()
         return binding.root
