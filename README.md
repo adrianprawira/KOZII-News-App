@@ -1,5 +1,5 @@
 # KOZII-News-App
-This is a News App i created for submission to PT. Kozii Emas Indonesia
+This is a News App i created for submission to PT. Kozii Emas Nusantara
 
 ## Build Using:
 - Retrofit
